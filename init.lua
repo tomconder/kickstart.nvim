@@ -424,16 +424,13 @@ do
   --
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
   vim.pack.add { gh 'projekt0n/github-nvim-theme' }
-  ---@diagnostic disable-next-line: missing-fields
   require('github-theme').setup {
-    styles = {
-      comments = { italic = false }, -- Disable italics in comments
+    options = {
+      styles = { comments = 'NONE' }, -- Disable italics in comments
     },
   }
 
-  -- Load the colorscheme here.
-  -- Like many other themes, this one has different styles, and you could load
-  -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  -- Load the colorscheme here (github_light, github_dark, github_dark_dimmed, ...).
   vim.cmd.colorscheme 'github_light'
 
   -- Highlight todo, notes, etc in comments
